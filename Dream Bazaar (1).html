@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dream Bazaar</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--card:#0e0a0b;--wine:#64081B;--gold:#FFC042;--ink:#f7f1ea;--mute:#a99a98;--line:rgba(255,192,66,.2);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);overflow-x:hidden;width:100%}
+body{background:radial-gradient(ellipse at 50% -5%,rgba(100,8,27,.75),transparent 60%),var(--bg);color:var(--ink);font-family:"Vazirmatn",Tahoma,system-ui,sans-serif;line-height:1.7;min-height:100vh;padding-bottom:calc(98px + env(safe-area-inset-bottom,0px));overflow-x:hidden;width:100%;max-width:100%;position:relative}
+html[lang=en] body{font-family:"Space Grotesk",system-ui,sans-serif}
+.wrap{width:100%;max-width:480px;margin:0 auto;padding:14px 18px;overflow-x:clip}
+.lang{display:flex;justify-content:center;gap:4px;width:max-content;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px}
+.lang button{border:0;background:none;color:var(--mute);font:inherit;font-size:13px;padding:3px 14px;border-radius:99px;cursor:pointer}
+.lang button.on{background:var(--gold);color:#000;font-weight:700}
+button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hero{text-align:center;padding:22px 0 6px}
+.ring{position:relative;width:176px;height:176px;margin:0 auto;border-radius:50%;padding:5px;background:conic-gradient(var(--gold),var(--wine),#ff7a59,var(--gold));animation:spin 8s linear infinite}
+.in{position:relative;width:100%;height:100%;border-radius:50%;background:#000;padding:4px;animation:spin 8s linear infinite reverse}
+.in img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;background:var(--card)}
+.badgebox{position:absolute;inset:0;animation:spin 8s linear infinite reverse}
+.badge{position:absolute;inset-inline-end:2px;bottom:2px;width:46px;height:46px;border-radius:50%;background:var(--gold);border:4px solid #000;display:grid;place-items:center}
+.badge svg{width:22px;fill:none;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{font-size:26px;font-weight:800;margin-top:16px;font-family:"Space Grotesk","Vazirmatn",sans-serif}
+.role{color:var(--gold);font-weight:600;font-size:15px}
+.bio{color:var(--mute);font-size:14px;margin:10px auto 0;max-width:36ch}
+.phones{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;width:100%;gap:8px;margin-top:14px;text-align:center}
+.ph{display:inline-flex;align-items:center;gap:8px;direction:ltr;background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;padding:7px 16px;border-radius:99px;transition:.2s}
+.ph:hover{border-color:var(--gold);transform:translateY(-2px)}
+.ph svg{width:16px;fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.soc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.tile{display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 6px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:600;transition:transform .2s,border-color .2s}
+.tile:hover{transform:translateY(-4px);border-color:var(--gold)}
+.tile:active{transform:scale(.97)}
+.ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center}
+.ic svg{width:23px;height:23px;fill:#fff}
+.ic svg.st{fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ghost{width:30px!important;height:30px!important;fill:#fff!important;stroke:#000;stroke-width:1.4;stroke-linejoin:round;filter:drop-shadow(0 2px 2px rgba(0,0,0,.45));animation:float 2.4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-3px) rotate(-4deg)}}
+h2{font-size:17px;margin:30px 0 12px;font-weight:800}
+.addr{position:relative;display:flex;align-items:center;gap:14px;overflow:hidden;width:100%;margin-top:16px;padding:16px;border-radius:20px;border:1px solid var(--line);color:var(--ink);text-decoration:none;background:linear-gradient(rgba(255,192,66,.07) 1px,transparent 1px) 0 0/100% 22px,linear-gradient(90deg,rgba(255,192,66,.07) 1px,transparent 1px) 0 0/22px 100%,var(--card);transition:border-color .2s}
+.addr:hover{border-color:var(--gold)}
+.pin{position:relative;width:52px;height:52px;flex:none;border-radius:14px;background:var(--gold);display:grid;place-items:center;font-size:24px}
+.pin::after{content:"";position:absolute;inset:0;border-radius:14px;border:2px solid var(--gold);animation:ping 2s ease-out infinite}
+@keyframes ping{to{transform:scale(1.7);opacity:0}}
+.addr .tx{flex:1;min-width:0}
+.addr small{display:block;color:var(--gold);font-size:12px;font-weight:600}
+.addr b{display:block;font-size:15px;font-weight:800}
+.addr em{font-style:normal;color:var(--mute);font-size:12px}
+.arr{width:20px;flex:none;fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+[dir=ltr] .arr{transform:scaleX(-1)}
+.works{display:grid;gap:10px}
+.wk{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--gold);border-radius:16px;padding:12px 14px;color:var(--ink);text-decoration:none;transition:transform .2s,border-color .2s}
+.wk:hover{transform:translateY(-3px);border-color:var(--gold)}
+.wk .sq{width:48px;height:48px;flex:none;border-radius:13px;background:var(--gold);display:grid;place-items:center}
+.wk .sq svg,.cardsv svg{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.wk .sq svg{width:24px;stroke:#000;stroke-width:1.9}
+.wk .tx{flex:1}
+.wk .sq svg.br{width:48px;height:48px;stroke:none;fill:none;border-radius:13px}
+.wk b{display:block;font-size:15px;font-family:"Space Grotesk","Vazirmatn",sans-serif}
+.wk span{font-size:12px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cardsv{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 14px 18px;transition:transform .2s}
+.cardsv:hover{transform:translateY(-4px)}
+.cardsv::before{content:"";position:absolute;width:90px;height:90px;border-radius:50%;top:-30px;inset-inline-end:-30px;background:var(--c);opacity:.18;filter:blur(14px)}
+.cardsv .o{position:relative;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--c),color-mix(in srgb,var(--c) 55%,#000));box-shadow:0 6px 16px color-mix(in srgb,var(--c) 40%,transparent)}
+.cardsv svg{width:25px;stroke:#fff;stroke-width:1.8}
+.cardsv b{display:block;font-size:14px;margin-top:10px}
+.cardsv span{display:block;font-size:12px;color:var(--mute);line-height:1.5}
+.cardsv i{display:block;width:30px;height:3px;border-radius:3px;background:var(--c);margin-top:10px}
+.cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:5;padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,#000 40%)}
+.cta{display:flex;justify-content:center;align-items:center;gap:10px;max-width:480px;margin:0 auto;background:var(--gold);color:#000;font-weight:800;text-decoration:none;border-radius:18px;padding:15px;box-shadow:0 8px 24px rgba(255,192,66,.3);animation:pulse 2.6s ease-in-out infinite}
+.cta svg{width:22px;fill:#000}
+@keyframes pulse{50%{transform:scale(1.02)}}
+.fade{opacity:0;transform:translateY(12px);animation:up .5s ease forwards}
+@keyframes up{to{opacity:1;transform:none}}
+footer{text-align:center;color:var(--mute);font-size:12px;margin-top:26px}
+@media(max-width:340px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang" id="lang"></div>
+  <section class="hero">
+    <div class="ring"><div class="in" id="photo"></div></div>
+    <h1 id="name"></h1><div class="role" id="role"></div>
+    <p class="bio" id="bio"></p>
+    <div class="phones" id="phones"></div>
+  </section>
+  <nav class="soc" id="soc"></nav>
+  <a class="addr" id="addr" target="_blank" rel="noopener"></a>
+  <h2 id="wT"></h2><div class="works" id="works"></div>
+  <h2 id="sT"></h2><div class="grid" id="svc"></div>
+  <footer id="foot"></footer>
+</div>
+<div class="cta-bar"><a class="cta" id="cta" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.600 15L2 22l5.200-1.400A10 10 0 1 0 12 2zm4.500 14c-.2.500-1.100 1-1.500 1-.4.100-.9.100-2.800-.6-2.300-.9-3.800-3.300-3.900-3.500-.1-.2-.9-1.200-.9-2.300s.6-1.700.8-1.900c.2-.2.400-.3.600-.3h.4c.2 0 .3 0 .5.400l.7 1.700c.1.200.1.300 0 .4l-.3.400-.3.400c-.1.100-.2.300-.1.500.2.300.7 1.100 1.400 1.700 1 .8 1.700 1.100 2 1.200.3.100.4.100.5-.1l.8-.9c.2-.2.300-.2.500-.1l1.600.8c.2.100.4.200.4.300.1.100.1.700-.1 1.200z"/></svg><span id="ctaT"></span></a></div>
+<script>
+const CONFIG = {
+  defaultLang: "ku",
+  snapUser: "dream-bazaar",
+  photo: "https://i.postimg.cc/XvqLW6Gk/IMG-20250819-013420-674.webp",
+  whatsapp: "07503815939",
+  phones: ["07503815939","07834646116"],
+  instagram: "https://instagram.com/dream._.bazaar?xtok=MWlkem1zejRtbmRqdQ%3D%3D",
+  snapchat: "https://www.snapchat.com/@dream-bazaar?sender_web_id=1c5dfa34-809c-4e19-beef-1146c8e60cb1&device_type=android&is_copy_url=true",
+  tiktok: "https://www.tiktok.com/@dream_bazaar?_r=1&_t=ZS-9AY8bAdLhEl",
+  pinterest: "https://pin.it/5YnLRTOVy",
+  website: "https://dream-bazaar.com/",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=Duhok+Iraq",
+  works: [["SHEIN","https://ar.shein.com/"],["TAOBAO","https://world.taobao.com/?spm=a2141.241046-global.201857.1.543b5adbmVIY6u"],["1688","https://www.1688.com/"],["PINDUODUO","https://pinduoduo.com/"],["TRENDYOL","https://www.trendyol.com/"],["Alibaba","https://www.alibaba.com/"]],
+  text: {
+    ku: {dir:"rtl",name:"Dream Bazaar",role:"کرینا ئۆنلاین",bio:"کرینا تشتان ژ مالپەرێن جیهانی ب ساناهی و ب متمانە، تا دەرگەهێ مالا تە.",
+      wa:"واتسئاپ",ig:"ئینستاگرام",sn:"سناپ",tt:"تیکتۆک",pn:"پینتێرێست",web:"ماڵپەر",
+      addrH:"ناڤنیشان",addrT:"دهوک - عێراق",map:"ل سەر نەخشەیێ ببینە",
+      wT:"کار",wReq:"ماڵپەرێ ڤەکە",wMsg:"سڵاڤ، دڤێت ژ {s} تشتەکی داخواز بکەم",
+      sT:"شیان",cta:"پەیوەندی ل گەل مە بکە",foot:"Dream Bazaar © 2026",
+      sv:[["گەهاندنا زوی","تا دەرگەهێ مالا تە"],["پارەدانا ئارام","ب شێوازێن سەلامەت"],["شوێنکەتنا داخوازیێ","ڕەوشا پارسەلێ ببینە"],["باشترین نرخ","ب نرخێن گونجایی"],["پشتەڤانی","ئامادەین ل هەر دەمەکێ"],["پێچانا جوان","ب ئاگەهداری و جوانی"]]},
+    ar:{dir:"rtl",name:"Dream Bazaar",role:"تسوق أونلاين",bio:"اشترِ منتجاتك من المواقع العالمية بسهولة وثقة، حتى باب بيتك.",
+      wa:"واتساب",ig:"إنستغرام",sn:"سناب",tt:"تيك توك",pn:"بنترست",web:"الموقع",
+      addrH:"العنوان",addrT:"دهوك - العراق",map:"شاهد على الخريطة",
+      wT:"الأعمال",wReq:"افتح الموقع",wMsg:"مرحباً، أريد طلب منتج من {s}",
+      sT:"المميزات",cta:"تواصل معنا",foot:"Dream Bazaar © 2026",
+      sv:[["توصيل سريع","حتى باب بيتك"],["دفع آمن","بطرق موثوقة"],["تتبع الطلب","تابع حالة شحنتك"],["أفضل الأسعار","أسعار مناسبة"],["دعم متواصل","جاهزون في أي وقت"],["تغليف أنيق","بعناية وجمال"]]},
+    en:{dir:"ltr",name:"Dream Bazaar",role:"Online Shopping",bio:"Order from the world's biggest shopping sites, easily and safely, right to your door.",
+      wa:"WhatsApp",ig:"Instagram",sn:"Snapchat",tt:"TikTok",pn:"Pinterest",web:"Website",
+      addrH:"Address",addrT:"Duhok - Iraq",map:"View on map",
+      wT:"Services",wReq:"Open website",wMsg:"Hi, I'd like to order something from {s}",
+      sT:"Features",cta:"Contact us",foot:"Dream Bazaar © 2026",
+      sv:[["Fast delivery","Straight to your door"],["Secure payment","Trusted methods"],["Order tracking","Follow your parcel"],["Best prices","Fair, honest rates"],["Support","Here whenever you need"],["Neat packaging","Handled with care"]]}
+  }
+};
+const $=id=>document.getElementById(id);
+const num=n=>"964"+String(n).replace(/\D/g,"").replace(/^0+/,"");
+const wa="https://wa.me/"+num(CONFIG.whatsapp);
+const P={
+ bag:'<path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/>',
+ box:'<path d="M3 8l9-5 9 5v8l-9 5-9-5V8z"/><path d="M3 8l9 5 9-5M12 13v8"/>',
+ globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+ cart:'<path d="M3 4h2l2 12h11l2-8H6"/><circle cx="9" cy="20" r="1.200"/><circle cx="17" cy="20" r="1.200"/>',
+ tag:'<path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.500" cy="8.500" r="1.500"/>',
+ store:'<path d="M4 9l1-5h14l1 5M4 9v11h16V9M9 20v-6h6v6"/>',
+ truck:'<path d="M2 6h11v10H2zM13 9h5l3 3v4h-8"/><circle cx="6" cy="18" r="1.800"/><circle cx="17" cy="18" r="1.800"/>',
+ shield:'<path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/>',
+ pin:'<path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/>',
+ chat:'<path d="M4 5h16v11H9l-5 4V5z"/>',
+ gift:'<path d="M3 10h18v4H3zM5 14v7h14v-7M12 10v11"/><path d="M12 10c-3 0-5-1-4.500-3S12 6 12 10zM12 10c3 0 5-1 4.500-3S12 6 12 10z"/>',
+ phone:'<path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+ arrow:'<path d="M15 5l-7 7 7 7"/>'
+};
+const mk=(bg,txt,fs,ex)=>`<svg class="br" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="${bg}" ${ex||""}/><text x="24" y="24" dy=".35em" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="${fs}" fill="#fff">${txt}</text></svg>`;
+const BR=[mk("#000","SHEIN",12.5,'stroke="#FFC042" stroke-width="1.5"'),mk("#FF5000","淘",28),mk("#FF6A00","1688",15),mk("#E02E24","拼",28),mk("#F27A1A","T",30),mk("#FF6A00","A",30)];
+const wkIcons=["bag","box","globe","cart","tag","store"];
+const svIcons=["truck","shield","pin","tag","chat","gift"];
+const svColors=["#FFC042","#14b8a6","#fb7c2d","#3b82f6","#a855f7","#22c55e"];
+const SOC={
+ ig:["linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf)",'<path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.500a4.500 4.500 0 1 1 0 9 4.500 4.500 0 0 1 0-9zm0 2a2.500 2.500 0 1 0 0 5 2.500 2.500 0 0 0 0-5zM17.500 5.500a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>'],
+ wa:["linear-gradient(135deg,#3ee07a,#0f9d4a)",'<path d="M12 2a10 10 0 0 0-8.600 15L2 22l5.200-1.400A10 10 0 1 0 12 2zm4.500 14c-.2.500-1.100 1-1.500 1-.4.100-.9.100-2.800-.6-2.300-.9-3.800-3.300-3.900-3.500-.1-.2-.9-1.200-.9-2.300s.6-1.700.8-1.900c.2-.2.400-.3.600-.3h.4c.2 0 .3 0 .5.400l.7 1.700c.1.200.1.300 0 .4l-.3.400-.3.400c-.1.100-.2.300-.1.500.2.300.7 1.100 1.400 1.700 1 .8 1.700 1.100 2 1.200.3.100.4.100.5-.1l.8-.9c.2-.2.300-.2.500-.1l1.600.8c.2.100.4.200.4.300.1.100.1.700-.1 1.200z"/>'],
+ sn:["linear-gradient(135deg,#fff36b,#f5c400)",'<path class="ghost" d="M12 2.500c-3 0-5 2.200-5 5v3c-.8.400-2 .500-2 1.200 0 .8 1.500 1 2.200 1.400-.5 1.500-1.600 2.300-2.700 2.800.8 1.300 2.300 1.100 3.100 1.500.6.300.8 1.700 2.400 1.700 1 0 1.500-.8 2-.8s1 .8 2 .8c1.600 0 1.800-1.400 2.400-1.700.8-.4 2.300-.2 3.100-1.500-1.100-.5-2.200-1.300-2.700-2.800.7-.4 2.200-.6 2.200-1.400 0-.7-1.200-.8-2-1.200v-3c0-2.800-2-5-5-5z"/>'],
+ tt:["linear-gradient(135deg,#25f4ee,#111 55%,#fe2c55)",'<path d="M16.500 2h-3.200v13.300a2.800 2.800 0 1 1-2.800-2.800c.3 0 .6 0 .8.100V9.300a6 6 0 1 0 5.200 5.900V8.700c1 .8 2.300 1.300 3.700 1.300V6.800c-2 0-3.700-1.700-3.700-4.800z"/>'],
+ pn:["linear-gradient(135deg,#ff4d5a,#bd081c)",'<path d="M12 2a10 10 0 0 0-3.600 19.300c-.1-.8-.2-2 0-2.900l1.200-5s-.3-.6-.3-1.500c0-1.400.8-2.400 1.800-2.400.9 0 1.300.6 1.300 1.400 0 .9-.5 2.100-.8 3.300-.2 1 .5 1.800 1.500 1.800 1.800 0 3.200-1.900 3.200-4.600 0-2.400-1.700-4.100-4.200-4.100-2.900 0-4.600 2.200-4.600 4.400 0 .9.300 1.800.8 2.300.1.100.1.200.1.300l-.3 1.100c0 .2-.2.200-.4.100-1.300-.6-2.100-2.500-2.100-4 0-3.300 2.400-6.300 6.900-6.300 3.600 0 6.400 2.600 6.400 6 0 3.600-2.300 6.500-5.400 6.500-1.100 0-2.100-.5-2.400-1.200l-.7 2.500c-.2.900-.9 2-1.300 2.700A10 10 0 1 0 12 2z"/>'],
+ web:["linear-gradient(135deg,#FFC042,#64081B)",'<g class="st" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">'+P.globe+'</g>']
+};
+let lang=CONFIG.defaultLang;
+try{lang=localStorage.getItem("db_lang")||CONFIG.defaultLang}catch(e){}
+if(!CONFIG.text[lang])lang=CONFIG.defaultLang;
+const bagSvg='<svg viewBox="0 0 24 24">'+P.bag+'</svg>';
+function photo(){
+  const p=$("photo"),bd='<div class="badgebox"><div class="badge">'+bagSvg+'</div></div>';
+  const img=new Image();img.alt="Dream Bazaar";
+  const fallback=()=>{p.innerHTML='<img alt="" src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 10 10%27%3E%3Crect width=%2710%27 height=%2710%27 fill=%27%2364081B%27/%3E%3C/svg%3E">'+bd};
+  img.onerror=fallback;
+  img.onload=()=>{p.innerHTML='';p.appendChild(img);p.insertAdjacentHTML("beforeend",bd)};
+  img.src=CONFIG.photo;
+}
+function render(){
+  const t=CONFIG.text[lang];
+  document.documentElement.lang=lang;document.documentElement.dir=t.dir;
+  $("name").textContent=t.name;$("role").textContent=t.role;$("bio").textContent=t.bio;document.title=t.name;
+  $("phones").innerHTML=CONFIG.phones.map(n=>`<a class="ph" href="tel:+${num(n)}"><svg viewBox="0 0 24 24">${P.phone}</svg>${n}</a>`).join("");
+  const socials=[["ig",CONFIG.instagram,t.ig],["wa",wa,t.wa],["sn",CONFIG.snapchat,t.sn],["tt",CONFIG.tiktok,t.tt],["pn",CONFIG.pinterest,t.pn],["web",CONFIG.website,t.web]];
+  $("soc").innerHTML=socials.map(([k,u,l],i)=>`<a class="tile fade" data-k="${k}" style="animation-delay:${.05+i*.06}s" href="${u}" target="_blank" rel="noopener"><span class="ic" style="background:${SOC[k][0]}"><svg viewBox="0 0 24 24">${SOC[k][1]}</svg></span>${l}</a>`).join("");
+  $("addr").href=CONFIG.mapLink;
+  $("addr").innerHTML=`<span class="pin">📍</span><span class="tx"><small>${t.addrH}</small><b>${t.addrT}</b><em>${t.map}</em></span><svg class="arr" viewBox="0 0 24 24">${P.arrow}</svg>`;
+  $("wT").textContent=t.wT;
+  $("works").innerHTML=CONFIG.works.map(([s,u],i)=>`<a class="wk fade" style="animation-delay:${.1+i*.06}s" href="${u}" target="_blank" rel="noopener"><span class="sq" style="background:none">${BR[i]}</span><span class="tx"><b>${s}</b><span>${t.wReq}</span></span><svg class="arr" viewBox="0 0 24 24">${P.arrow}</svg></a>`).join("");
+  $("sT").textContent=t.sT;
+  $("svc").innerHTML=t.sv.map((s,i)=>`<div class="cardsv fade" style="--c:${svColors[i]};animation-delay:${.1+i*.06}s"><span class="o"><svg viewBox="0 0 24 24">${P[svIcons[i]]}</svg></span><b>${s[0]}</b><span>${s[1]}</span><i></i></div>`).join("");
+  $("cta").href=wa;$("ctaT").textContent=t.cta;$("foot").textContent=t.foot;
+  $("lang").innerHTML=[["ku","کوردی"],["ar","عربي"],["en","EN"]].map(([c,l])=>`<button class="${c===lang?"on":""}" data-l="${c}">${l}</button>`).join("");
+}
+$("lang").addEventListener("click",e=>{const l=e.target.dataset.l;if(!l)return;lang=l;try{localStorage.setItem("db_lang",l)}catch(x){}render()});
+$("soc").addEventListener("click",e=>{const a=e.target.closest('a[data-k="sn"]');if(!a)return;const ua=navigator.userAgent,web=CONFIG.snapchat,u=CONFIG.snapUser;if(/Android/i.test(ua)){e.preventDefault();location.href="intent://add/"+u+"#Intent;package=com.snapchat.android;scheme=snapchat;S.browser_fallback_url="+encodeURIComponent(web)+";end"}else if(/iPhone|iPad|iPod/i.test(ua)){e.preventDefault();const t=Date.now();location.href="snapchat://add/"+u;setTimeout(()=>{if(!document.hidden&&Date.now()-t<2500)location.href=web},1200)}});
+photo();render();
+</script>
+</body>
+</html>
